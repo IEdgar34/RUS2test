@@ -1,0 +1,125 @@
+.sidebar__wrapper {
+    width: 100%;
+    grid-area: sidebar;
+    background-color: #fff;
+    transition-property: visibility;
+    transition-delay: 0s;
+    transition-duration: 0.6s;
+    z-index: 100;
+
+    @media (max-width: 1000px) {
+        background: rgb(255, 255, 255, 0.95);
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        visibility: hidden;
+    }
+    &_active {
+        transition-delay: 0s;
+        visibility: visible;
+    }
+}
+.sidebar {
+    width: 100%;
+    background-color: #fff;
+    transition-property: transform;
+    transition-delay: 0.2s;
+    transition-duration: 0.5s;
+    @media (max-width: 1000px) {
+        box-shadow: 16px 0px 52px 0px rgba(14, 24, 80, 0.2);
+        width: 320px;
+        height: 100%;
+        position: absolute;
+        z-index: 10001;
+
+        transform: translateX(-100%);
+        &_active {
+            transform: translateX(0);
+        }
+    }
+    @media(max-width: 360px){
+        width: 360px;
+    }
+    @media(max-width: 320px){
+        width: 320px;
+    }
+
+    &__header {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 35px 29px 37px 29px;
+        @media(max-width: 3601px){
+            padding: 20px 24px 28px;
+        }
+        @media(max-width: 320px){
+            padding: 18px 17px 28px;
+        }
+    }
+    &__icons {
+        &:nth-child(1) {
+            display: none;
+            @media (max-width: 1000px) {
+                display: flex;
+            }
+        }
+    }
+    &__logo-wrapper {
+        width: 96px;
+        height: 50px;
+        @media(max-width: 360px){
+            width: 188px;
+        }
+        @media(max-width: 320px){
+            width: 171px;
+        }
+    }
+    &__footer {
+        width: 100%;
+        margin-top: 219px;
+        padding: 0 29px 0 19px;
+        @media(max-width: 360px){
+            margin-top: 32px;
+        }
+        @media(max-width: 360px){
+            margin-top: 4px;
+            padding: 0 29px 0 24px;
+        }
+        &-icons-wrap {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+        &-mailto {
+            display: block;
+            margin-bottom: 12px;
+            color: rgb(27, 28, 33);
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 24px;
+            letter-spacing: -0.2px;
+        }
+        &-tel {
+            display: block;
+            margin-bottom: 40px;
+            color: rgb(27, 28, 33);
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 32px;
+            letter-spacing: -0.6px;
+        }
+        &-language {
+            margin-right: 7px;
+            color: rgb(27, 28, 33);
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 24px;
+            letter-spacing: -0.2px;
+            cursor: pointer;
+            &_active {
+                color: rgb(126, 126, 130);
+            }
+        }
+    }
+}

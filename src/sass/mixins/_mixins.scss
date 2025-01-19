@@ -1,0 +1,4 @@
+@mixin fluid-title($min, $max) {
+    $current: calc($max / (1440 / 100));
+    font-size: clamp(#{$min}px, #{$current}vw, #{$max}px);
+}
